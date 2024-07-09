@@ -7,6 +7,16 @@
     <link rel="icon" href="https://fav.farm/🔥" />
   </head>
   <body>
-    <script></script>
+    <script>
+      let keys = [];
+      let secret = "secret";
+      window.addEventListener("keyup", (e) => {
+        keys.push(e.key);
+        keys.splice(-secret.length - 1, keys.length - secret.length);
+
+        if (keys.join("") === secret) console.log("DING DING! ");
+        console.log(keys);
+      });
+    </script>
   </body>
 </html>
